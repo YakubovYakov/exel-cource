@@ -1,0 +1,43 @@
+{
+	"name": "excel-course",
+	"version": "1.0.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "webpack serve --mode=development",
+		"build": "webpack --mode=production"
+	},
+	"keywords": [],
+	"author": "",
+	"private": "true",
+	"browserslist": "> 0.25%, not dead",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@babel/core": "^7.26.0",
+		"@babel/eslint-parser": "^7.25.9",
+		"@babel/preset-env": "^7.26.0",
+		"babel-loader": "^9.2.1",
+		"copy-webpack-plugin": "^12.0.2",
+		"css": "^3.0.0",
+		"eslint": "^9.16.0",
+		"eslint-config-google": "^0.14.0",
+		"eslint-webpack-plugin": "^4.2.0",
+		"globals": "^15.13.0",
+		"html-webpack-plugin": "^5.6.3",
+		"loader": "^2.1.1",
+		"mini-css-extract-plugin": "^2.9.2",
+		"sass": "^1.81.0",
+		"sass-loader": "^16.0.3",
+		"webpack": "^5.96.1",
+		"webpack-cli": "^5.1.4",
+		"webpack-dev-server": "^5.1.0"
+	},
+	"dependencies": {
+		"core-js": "^3.9.0",
+		"regenerator-runtime": "^0.14.1"
+	},
+	"overrides": {
+		"eslint": "^9.16.0"
+	}
+}
