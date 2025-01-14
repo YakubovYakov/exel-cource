@@ -1,0 +1,29 @@
+@use "normalize.css/normalize";
+
+@use "./variables" as vars;
+@use "./header";
+@use "./toolbar";
+@use "./formula";
+@use "./table";
+@use "./dashboard";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+.excel {
+  position: relative;
+	color: #888;
+	height: 100%;
+	max-width: 100%;
+	font-size: .8rem;
+}
+
