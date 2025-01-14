@@ -5,34 +5,34 @@ import globals from 'globals';
 
 /** @type {import('eslint').Linter.FlatConfig} */
 export default [
-  
-  js.configs.recommended,
 
-  googleConfig,
+	js.configs.recommended,
 
-  {
-    files: ["**/*.js"],
-    languageOptions: {
-      parser: babelParser,
-      parserOptions: {
-        babelOptions: {
-          configFile: './babel.config.json',
-        },
-        ecmaVersion: 'latest',
-        sourceType: 'module',
-      },
-      globals: {
-        ...globals.browser,
-        ...globals.node,
-      },
-    },
-    rules: {
-   
-      'semi': 'off',
-      'comma-dangle': 'off',
-      'require-jsdoc': 'off',
-      'valid-jsdoc': 'off',
-    },
-  },
+	googleConfig,
+
+	{
+		files: ["**/*.js"],
+		languageOptions: {
+			parser: babelParser,
+			parserOptions: {
+				babelOptions: {
+					configFile: './babel.config.json',
+				},
+				ecmaVersion: 'latest',
+				sourceType: 'module',
+			},
+			globals: {
+				...globals.browser,
+				...globals.node,
+			},
+		},
+		rules: {
+
+			'semi': 'off',
+			'comma-dangle': 'off',
+			'require-jsdoc': 'off',
+			'valid-jsdoc': 'off',
+		},
+	},
 ];
 

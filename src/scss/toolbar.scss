@@ -1,0 +1,17 @@
+@use "./variables" as vars;
+@use "./mixins" as mix;
+.excel__toolbar {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: vars.$header-heigth;
+	height: vars.$toolbar-heigth;
+	border-top: 1px solid vars.$border-color;
+	border-bottom: 1px solid vars.$border-color;
+	padding: 7px 10px;
+	display: flex;
+
+	.button {
+		@include mix.button(green);
+	}
+}

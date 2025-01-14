@@ -8,12 +8,8 @@ module.exports = (env, argv) => {
 	const isProd = argv.mode === "production";
 	const isDev = !isProd;
 
-	console.log("isDev", isDev)
-	console.log("isProd", isProd)
-
 	const filename = (ext) =>
-		isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`
-
+		isProd ? `[name].[contenthash].bundle.${ext}` : `[name].bundle.${ext}`;
 
 	const plugins = () => {
 		const base = [
@@ -35,15 +31,15 @@ module.exports = (env, argv) => {
 		if (isDev) {
 			base.push(
 				new EslintPlugin({
-					extensions: ["js"], // Проверять файлы с расширением .js
-          exclude: "node_modules", // Исключить папку node_modules
-					emitWarning: true, // Показать предупреждения в консоли
+					extensions: ["js"],
+					exclude: "node_modules",
+					emitWarning: true,
 				})
 			);
 		}
-
 		return base;
 	};
+
 	return {
 		target: "web",
 		context: path.resolve(__dirname, "src"),
@@ -74,7 +70,25 @@ module.exports = (env, argv) => {
 			rules: [
 				{
 					test: /\.s[ac]ss$/i,
-					use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+					use: [
+						MiniCssExtractPlugin.loader,
+						{
+							loader: "css-loader",
+							options: {
+								sourceMap: isDev,
+								url: false,
+							},
+						},
+						{
+							loader: "sass-loader",
+							options: {
+								sourceMap: isDev,
+								sassOptions: {
+									quietDeps: true,
+								},
+							},
+						},
+					],
 				},
 				{
 					test: /\.m?js$/,
